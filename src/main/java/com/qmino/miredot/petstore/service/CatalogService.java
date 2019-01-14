@@ -50,6 +50,18 @@ public interface CatalogService {
     public Category findCategory(@PathParam("id") Long categoryId);
 
     /**
+     * Get the category (inner class) with the specified category id.
+     *
+     * @param categoryId The category id
+     * @return The category with the specified id
+     * @summary Get the category with the specified id
+     */
+    @GET
+    @Path("/category/inner/{id}")
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    public MyInnerClassReturnType findCategoryInnerClass(@PathParam("id") Long categoryId);
+
+    /**
      * Create a new category. Fails if the category name is taken.
      *
      * @param category The category that will be created
@@ -228,4 +240,21 @@ public interface CatalogService {
     @ReturnType("java.lang.Void") // We won't return anything but need the response object to set the http status code.
     @BodyType("com.qmino.miredot.petstore.domain.Address") // We'll parse the json manually
     public Response putSomething(String myJson);
+
+
+    /**
+     * My inner class return type.
+     */
+    public static class MyInnerClassReturnType {
+
+        private String myField;
+
+        public String getMyField() {
+            return myField;
+        }
+
+        public void setMyField(String myField) {
+            this.myField = myField;
+        }
+    }
 }
