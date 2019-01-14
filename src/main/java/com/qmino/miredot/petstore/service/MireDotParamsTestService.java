@@ -21,7 +21,6 @@ public interface MireDotParamsTestService {
     /**
      * Deletes item with given id.
      *
-     * @summary Delete item with given id
      * @deprecated This method is deprecated. Use something else.
      */
     @DELETE
@@ -39,7 +38,6 @@ public interface MireDotParamsTestService {
      * @param creditCardTypeMatrix a credit card type
      * @param creditCardTypeBody   a credit card type
      * @return a credit card type
-     * @summary Testing enums
      */
     @POST
     @Produces(MediaType.TEXT_PLAIN)
@@ -66,7 +64,6 @@ public interface MireDotParamsTestService {
      * @param listMatrix a list of strings
      * @param listBody   a list of strings
      * @return a list of strings
-     * @summary Testing lists
      */
     @POST
     @Produces(MediaType.TEXT_PLAIN)
@@ -89,7 +86,6 @@ public interface MireDotParamsTestService {
      * @param form   A value that's stored in a form param
      * @param cookie A value that's stored in a cookie
      * @param header A value that's sent in a header
-     * @summary Testing matrix, form, cookie and header params
      */
     @DELETE
     @Path("/params/")
